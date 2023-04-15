@@ -1,8 +1,11 @@
 service: aws-lambda-mmbc-jwt
 frameworkVersion: '3'
+plugins:
+  - serverless-offline
 
 provider:
   name: aws
+  region: us-west-1
   runtime: nodejs18.x
 
 functions:
@@ -11,4 +14,4 @@ functions:
     events:
       - httpApi:
           path: /
-          method: get
+          method: post
